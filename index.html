@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training & Placement - SRMCEM Lucknow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTwtjri-i9tIhbzjm6qfLX1tF1_ZKX9OXn-Q&s" alt="SRMCEM Logo" class="nav__logo-img">
+                <div class="nav__logo-text">
+                    <span class="nav__logo-title">SRMCEM</span>
+                    <span class="nav__logo-subtitle">Training & Placement</span>
+                </div>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" id="public-nav">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#training" class="nav__link">Training Programs</a></li>
+                    <li class="nav__item"><a href="#statistics" class="nav__link">Placement Statistics</a></li>
+                    <li class="nav__item"><a href="#recruiters" class="nav__link">Recruiters</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+                
+                <div class="nav__auth" id="nav-auth">
+                    <button class="btn btn--outline btn--sm" id="student-login-btn">Student Login</button>
+                    <button class="btn btn--primary btn--sm" id="admin-login-btn">Admin Login</button>
+                </div>
+                
+                <div class="nav__user hidden" id="nav-user">
+                    <span class="nav__welcome" id="nav-welcome"></span>
+                    <button class="btn btn--outline btn--sm" id="logout-btn">Logout</button>
+                </div>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal__content">
+            <button class="modal__close" id="close-login-modal">&times;</button>
+            <h3 id="login-title">Student Login</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-id" class="form-label" id="login-id-label">Student ID / Email</label>
+                    <input type="text" id="login-id" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password" class="form-label">Password</label>
+                    <input type="password" id="login-password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width" id="login-submit">Login</button>
+            </form>
+            <div class="login-help">
+                <p><strong>Demo Credentials:</strong></p>
+                <div id="demo-credentials"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Public Content -->
+        <div id="public-content">
+            <!-- Hero Section -->
+            <section class="hero section" id="home">
+                <div class="hero__container container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Shri Ramswaroop Memorial College of Engineering & Management</h1>
+                        <p class="hero__subtitle">Building Tomorrow's Engineers Today</p>
+                        <p class="hero__description">Excellence in Engineering Education Since 2001 - AKTU Affiliated & AICTE Approved</p>
+                        
+                        <div class="hero__stats">
+                            <div class="hero__stat">
+                                <span class="hero__stat-number" data-target="78">0</span>
+                                <span class="hero__stat-text">% Placement Rate</span>
+                            </div>
+                            <div class="hero__stat">
+                                <span class="hero__stat-number" data-target="250">0</span>
+                                <span class="hero__stat-text">Companies Visited</span>
+                            </div>
+                            <div class="hero__stat">
+                                <span class="hero__stat-number" data-target="25">0</span>
+                                <span class="hero__stat-text">LPA Highest Package</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hero__buttons">
+                            <a href="#statistics" class="btn btn--primary">View Placements</a>
+                            <button class="btn btn--outline" id="hero-student-login">Student Portal</button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero__image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754840686/pplx_project_search_images/b45312b5dfbb4e4239704d3955d55a6afb586aef.png" alt="SRMCEM Campus">
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about section" id="about">
+                <div class="container">
+                    <h2 class="section__title">About SRMCEM Training & Placement Cell</h2>
+                    <p class="section__description">Bridging the gap between academia and industry with excellence in engineering education</p>
+                    
+                    <div class="about__grid">
+                        <div class="about__content">
+                            <h3>Our Mission</h3>
+                            <p>To provide comprehensive training and placement support to our students, ensuring their successful transition from academia to industry. We aim to develop industry-ready professionals equipped with technical expertise and soft skills.</p>
+                            
+                            <div class="about__highlights">
+                                <div class="highlight">
+                                    <h4>Established</h4>
+                                    <span>2001</span>
+                                </div>
+                                <div class="highlight">
+                                    <h4>Campus Size</h4>
+                                    <span>50 Acres</span>
+                                </div>
+                                <div class="highlight">
+                                    <h4>Students</h4>
+                                    <span>6000+</span>
+                                </div>
+                                <div class="highlight">
+                                    <h4>Faculty</h4>
+                                    <span>1000+</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about__features">
+                            <div class="feature">
+                                <div class="feature__icon">🎓</div>
+                                <h4>AKTU Affiliated</h4>
+                                <p>Affiliated with Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature__icon">✅</div>
+                                <h4>AICTE Approved</h4>
+                                <p>All India Council for Technical Education approved programs</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature__icon">🏆</div>
+                                <h4>ISO Certified</h4>
+                                <p>Quality education with international standards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Placement Statistics -->
+            <section class="statistics section" id="statistics">
+                <div class="container">
+                    <h2 class="section__title">Placement Statistics</h2>
+                    <p class="section__description">Outstanding placement records across all programs</p>
+                    
+                    <div class="stats__grid">
+                        <div class="stats__card">
+                            <h3>2024 Highlights</h3>
+                            <div class="stats__items">
+                                <div class="stats__item">
+                                    <span class="stats__number">INR 25 LPA</span>
+                                    <span class="stats__label">Highest Package</span>
+                                </div>
+                                <div class="stats__item">
+                                    <span class="stats__number">INR 6.2 LPA</span>
+                                    <span class="stats__label">Average Package</span>
+                                </div>
+                                <div class="stats__item">
+                                    <span class="stats__number">1100+</span>
+                                    <span class="stats__label">Offers Made</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stats__card">
+                            <h3>Course-wise Placement Rates</h3>
+                            <div class="stats__chart-container" style="position: relative; height: 300px;">
+                                <canvas id="placementChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="stats__card">
+                            <h3>Companies & Offers</h3>
+                            <div class="stats__items">
+                                <div class="stats__item">
+                                    <span class="stats__number">250+</span>
+                                    <span class="stats__label">Companies Visited</span>
+                                </div>
+                                <div class="stats__item">
+                                    <span class="stats__number">95%+</span>
+                                    <span class="stats__label">CSE Placement Rate</span>
+                                </div>
+                                <div class="stats__item">
+                                    <span class="stats__number">78.57%</span>
+                                    <span class="stats__label">Overall Placement Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Recruiters -->
+            <section class="recruiters section" id="recruiters">
+                <div class="container">
+                    <h2 class="section__title">Our Top Recruiters</h2>
+                    <p class="section__description">Leading companies trust SRMCEM for quality talent</p>
+                    
+                    <div class="recruiters__categories">
+                        <button class="recruiters__tab active" data-category="all">All Companies</button>
+                        <button class="recruiters__tab" data-category="it">IT & Software</button>
+                        <button class="recruiters__tab" data-category="banking">Banking & Finance</button>
+                        <button class="recruiters__tab" data-category="consulting">Consulting</button>
+                    </div>
+                    
+                    <div class="recruiters__grid" id="recruiters-grid">
+                        <div class="recruiter__card" data-category="it">
+                            <div class="recruiter__name">TCS</div>
+                        </div>
+                        <div class="recruiter__card" data-category="it">
+                            <div class="recruiter__name">Infosys</div>
+                        </div>
+                        <div class="recruiter__card" data-category="it">
+                            <div class="recruiter__name">Wipro</div>
+                        </div>
+                        <div class="recruiter__card" data-category="consulting">
+                            <div class="recruiter__name">Accenture</div>
+                        </div>
+                        <div class="recruiter__card" data-category="it">
+                            <div class="recruiter__name">Amazon</div>
+                        </div>
+                        <div class="recruiter__card" data-category="it">
+                            <div class="recruiter__name">Google</div>
+                        </div>
+                        <div class="recruiter__card" data-category="it">
+                            <div class="recruiter__name">Microsoft</div>
+                        </div>
+                        <div class="recruiter__card" data-category="banking">
+                            <div class="recruiter__name">HDFC Bank</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Training Programs -->
+            <section class="training section" id="training">
+                <div class="container">
+                    <h2 class="section__title">Training Programs</h2>
+                    <p class="section__description">Comprehensive skill development programs for industry readiness</p>
+                    
+                    <div class="training__grid">
+                        <div class="training__card">
+                            <div class="training__icon">💻</div>
+                            <h3>Technical Training</h3>
+                            <p>Advanced programming languages, frameworks, and development tools</p>
+                            <ul>
+                                <li>Data Structures & Algorithms</li>
+                                <li>Full Stack Development</li>
+                                <li>System Design</li>
+                                <li>Cloud Technologies</li>
+                            </ul>
+                            <button class="btn btn--secondary">Learn More</button>
+                        </div>
+                        
+                        <div class="training__card">
+                            <div class="training__icon">🗣️</div>
+                            <h3>Soft Skills Development</h3>
+                            <p>Communication, leadership, and interpersonal skills enhancement</p>
+                            <ul>
+                                <li>Communication Skills</li>
+                                <li>Presentation Skills</li>
+                                <li>Leadership Training</li>
+                                <li>Team Collaboration</li>
+                            </ul>
+                            <button class="btn btn--secondary">Learn More</button>
+                        </div>
+                        
+                        <div class="training__card">
+                            <div class="training__icon">🧮</div>
+                            <h3>Aptitude Training</h3>
+                            <p>Quantitative aptitude, logical reasoning, and analytical skills</p>
+                            <ul>
+                                <li>Quantitative Aptitude</li>
+                                <li>Logical Reasoning</li>
+                                <li>Verbal Ability</li>
+                                <li>Problem Solving</li>
+                            </ul>
+                            <button class="btn btn--secondary">Learn More</button>
+                        </div>
+                        
+                        <div class="training__card">
+                            <div class="training__icon">🎯</div>
+                            <h3>Interview Preparation</h3>
+                            <p>Mock interviews, group discussions, and placement preparation</p>
+                            <ul>
+                                <li>Mock Interviews</li>
+                                <li>Group Discussions</li>
+                                <li>Resume Building</li>
+                                <li>Industry Exposure</li>
+                            </ul>
+                            <button class="btn btn--secondary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact section" id="contact">
+                <div class="container">
+                    <h2 class="section__title">Contact Us</h2>
+                    <p class="section__description">Get in touch with our Training & Placement Cell</p>
+                    
+                    <div class="contact__grid">
+                        <div class="contact__info">
+                            <h3>Contact Information</h3>
+                            <div class="contact__item">
+                                <div class="contact__icon">📍</div>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>Tiwari Ganj, Faizabad Road<br>Lucknow, Uttar Pradesh - 226028</p>
+                                </div>
+                            </div>
+                            <div class="contact__item">
+                                <div class="contact__icon">📞</div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>7570003074<br>9839010407</p>
+                                </div>
+                            </div>
+                            <div class="contact__item">
+                                <div class="contact__icon">✉️</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>admissions@srmcem.ac.in</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__form">
+                            <h3>Send us a Message</h3>
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" id="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" id="subject" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea id="message" class="form-control" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Student Dashboard -->
+        <div id="student-dashboard" class="dashboard hidden">
+            <div class="container">
+                <div class="dashboard__header">
+                    <h2>Student Dashboard</h2>
+                    <p>Welcome back, <span id="student-name"></span></p>
+                </div>
+                
+                <div class="dashboard__tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="applications">Applications</button>
+                    <button class="tab-btn" data-tab="opportunities">Opportunities</button>
+                    <button class="tab-btn" data-tab="training">Training</button>
+                    <button class="tab-btn" data-tab="notices">Notices</button>
+                </div>
+                
+                <div class="dashboard__content">
+                    <!-- Overview Tab -->
+                    <div id="overview-tab" class="tab-content active">
+                        <div class="dashboard__grid">
+                            <div class="info-card">
+                                <h3>Personal Information</h3>
+                                <div id="student-info"></div>
+                            </div>
+                            <div class="info-card">
+                                <h3>Placement Status</h3>
+                                <div id="placement-status"></div>
+                            </div>
+                            <div class="info-card">
+                                <h3>Quick Stats</h3>
+                                <div id="student-stats"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Applications Tab -->
+                    <div id="applications-tab" class="tab-content">
+                        <div class="applications-container">
+                            <h3>Your Applications</h3>
+                            <div id="applications-list"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Opportunities Tab -->
+                    <div id="opportunities-tab" class="tab-content">
+                        <div class="opportunities-container">
+                            <h3>Upcoming Placement Drives</h3>
+                            <div id="opportunities-list"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Training Tab -->
+                    <div id="training-tab" class="tab-content">
+                        <div class="training-container">
+                            <h3>Training Programs</h3>
+                            <div id="training-schedule"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Notices Tab -->
+                    <div id="notices-tab" class="tab-content">
+                        <div class="notices-container">
+                            <h3>Important Notices</h3>
+                            <div id="notices-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="dashboard hidden">
+            <div class="container">
+                <div class="dashboard__header">
+                    <h2>Admin Dashboard</h2>
+                    <p>Training & Placement Officer Portal</p>
+                </div>
+                
+                <div class="dashboard__tabs">
+                    <button class="tab-btn active" data-tab="analytics">Analytics</button>
+                    <button class="tab-btn" data-tab="recruiters">Recruiters</button>
+                    <button class="tab-btn" data-tab="students">Students</button>
+                    <button class="tab-btn" data-tab="reports">Reports</button>
+                    <button class="tab-btn" data-tab="system">System</button>
+                </div>
+                
+                <div class="dashboard__content">
+                    <!-- Analytics Tab -->
+                    <div id="analytics-tab" class="tab-content active">
+                        <div class="analytics-grid">
+                            <div class="analytics-card">
+                                <h3>Placement Trends</h3>
+                                <div class="chart-container" style="position: relative; height: 300px;">
+                                    <canvas id="trendsChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="analytics-card">
+                                <h3>Course-wise Placement</h3>
+                                <div class="chart-container" style="position: relative; height: 300px;">
+                                    <canvas id="courseChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="analytics-card">
+                                <h3>Package Distribution</h3>
+                                <div class="chart-container" style="position: relative; height: 300px;">
+                                    <canvas id="packageChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="analytics-card">
+                                <h3>Top Hiring Companies</h3>
+                                <div class="chart-container" style="position: relative; height: 300px;">
+                                    <canvas id="companiesChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recruiters Tab -->
+                    <div id="recruiters-tab" class="tab-content">
+                        <div class="recruiters-management">
+                            <div class="section-header">
+                                <h3>Recruiter Management</h3>
+                                <button class="btn btn--primary" id="add-recruiter-btn">Add New Recruiter</button>
+                            </div>
+                            <div id="recruiters-list"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Students Tab -->
+                    <div id="students-tab" class="tab-content">
+                        <div class="students-management">
+                            <h3>Student Management</h3>
+                            <div class="filters">
+                                <select id="course-filter" class="form-control">
+                                    <option value="">All Courses</option>
+                                    <option value="B.Tech CSE">B.Tech CSE</option>
+                                    <option value="B.Tech IT">B.Tech IT</option>
+                                    <option value="B.Tech ECE">B.Tech ECE</option>
+                                </select>
+                                <select id="status-filter" class="form-control">
+                                    <option value="">All Status</option>
+                                    <option value="Placed">Placed</option>
+                                    <option value="Not Placed">Not Placed</option>
+                                </select>
+                            </div>
+                            <div id="students-list"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reports Tab -->
+                    <div id="reports-tab" class="tab-content">
+                        <div class="reports-section">
+                            <h3>Reports & Analytics</h3>
+                            <div class="reports-grid">
+                                <div class="report-card">
+                                    <h4>Placement Report</h4>
+                                    <p>Comprehensive placement statistics and trends</p>
+                                    <button class="btn btn--outline">Generate Report</button>
+                                </div>
+                                <div class="report-card">
+                                    <h4>Company Statistics</h4>
+                                    <p>Company-wise hiring data and trends</p>
+                                    <button class="btn btn--outline">Generate Report</button>
+                                </div>
+                                <div class="report-card">
+                                    <h4>Student Performance</h4>
+                                    <p>Student-wise placement performance analysis</p>
+                                    <button class="btn btn--outline">Generate Report</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- System Tab -->
+                    <div id="system-tab" class="tab-content">
+                        <div class="system-management">
+                            <h3>System Management</h3>
+                            <div class="system-grid">
+                                <div class="system-card">
+                                    <h4>Job Opportunities</h4>
+                                    <p>Manage placement drives and job postings</p>
+                                    <button class="btn btn--secondary">Manage</button>
+                                </div>
+                                <div class="system-card">
+                                    <h4>Notifications</h4>
+                                    <p>Send announcements to students</p>
+                                    <button class="btn btn--secondary">Send Notification</button>
+                                </div>
+                                <div class="system-card">
+                                    <h4>Training Programs</h4>
+                                    <p>Manage training schedules and programs</p>
+                                    <button class="btn btn--secondary">Manage</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Recruiter Modal -->
+    <div id="add-recruiter-modal" class="modal hidden">
+        <div class="modal__content modal__content--large">
+            <button class="modal__close" id="close-add-recruiter-modal">&times;</button>
+            <h3>Add New Recruiter</h3>
+            <form id="add-recruiter-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company-name" class="form-label">Company Name</label>
+                        <input type="text" name="company-name" id="company-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="short-name" class="form-label">Short Name</label>
+                        <input type="text" name="short-name" id="short-name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="industry" class="form-label">Industry</label>
+                        <select name="industry" id="industry" class="form-control" required>
+                            <option value="">Select Industry</option>
+                            <option value="IT Services">IT Services</option>
+                            <option value="E-commerce/Tech">E-commerce/Tech</option>
+                            <option value="Banking & Finance">Banking & Finance</option>
+                            <option value="Consulting">Consulting</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="package-range" class="form-label">Package Range</label>
+                        <input type="text" name="package-range" id="package-range" class="form-control" placeholder="e.g., 4.0-8.0 LPA" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hr-name" class="form-label">HR Name</label>
+                        <input type="text" name="hr-name" id="hr-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hr-email" class="form-label">HR Email</label>
+                        <input type="email" name="hr-email" id="hr-email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hr-phone" class="form-label">HR Phone</label>
+                        <input type="tel" name="hr-phone" id="hr-phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="positions" class="form-label">Number of Positions</label>
+                        <input type="number" name="positions" id="positions" class="form-control" min="1" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="requirements" class="form-label">Requirements</label>
+                    <textarea name="requirements" id="requirements" class="form-control" rows="3" placeholder="e.g., B.Tech CSE/IT, CGPA > 7.0"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="visit-date" class="form-label">Visit Date</label>
+                        <input type="date" name="visit-date" id="visit-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="form-label">Status</label>
+                        <select name="status" id="status" class="form-control" required>
+                            <option value="Upcoming">Upcoming</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width">Add Recruiter</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>SRMCEM</h3>
+                    <p>Training & Placement Cell</p>
+                    <p>Building careers, shaping futures</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#training">Training</a></li>
+                        <li><a href="#statistics">Statistics</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#training">Technical Training</a></li>
+                        <li><a href="#training">Soft Skills</a></li>
+                        <li><a href="#training">Aptitude</a></li>
+                        <li><a href="#training">Interview Prep</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Contact</h4>
+                    <p>Lucknow, UP - 226028</p>
+                    <p>Phone: 7570003074</p>
+                    <p>Email: admissions@srmcem.ac.in</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 SRMCEM Training & Placement Cell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
